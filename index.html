@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda Civil | Karime & Alain</title>
+  
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Contenedor Principal (Lleva el fondo t.jpg / t.png) -->
+  <main class="main-wrapper">
+    
+    <!-- Decoración Floral 3 (Esquina superior izquierda) -->
+    <img src="assets/flores3.png" alt="Decoración Floral 3" class="floral-img top-left">
+
+    <!-- Tarjeta de Papel Blanca en Relieve -->
+    <div class="card-container">
+      
+      <header class="header">
+        <p class="subtitle">TE INVITAMOS A CELEBRAR NUESTRA BODA CIVIL</p>
+        <h1 class="names">Karime <span class="ampersand">&</span> Alain</h1>
+      </header>
+
+      <section class="message">
+        <p>HAY MOMENTOS EN LA VIDA QUE SON INOLVIDABLES, Y COMPARTIRLOS CON LAS PERSONAS QUE QUEREMOS LOS HACE ETERNOS. POR ESO, NOS ENCANTARÍA CONTAR CON SU VALIOSA PRESENCIA EN ESTE DÍA TAN SIGNIFICATIVO PARA NOSOTROS.</p>
+      </section>
+
+      <section class="event-info">
+        <div class="date-time">
+          <span>24 DE OCTUBRE</span>
+          <span class="divider">|</span>
+          <span>7:00 PM.</span>
+        </div>
+        <p class="location">LUGAR: PAUSA RESTAURANTE</p>
+      </section>
+
+      <!-- Contador en Tiempo Real -->
+      <section class="countdown-section">
+        <h3>FALTAN PARA EL GRAN DÍA</h3>
+        <div id="countdown" class="timer-grid">
+          <div class="time-box"><span id="days">00</span><p>Días</p></div>
+          <div class="time-box"><span id="hours">00</span><p>Horas</p></div>
+          <div class="time-box"><span id="minutes">00</span><p>Min</p></div>
+          <div class="time-box"><span id="seconds">00</span><p>Seg</p></div>
+        </div>
+      </section>
+
+      <!-- Botones Interactivos -->
+      <section class="actions">
+        <a id="btn-maps" href="https://maps.app.goo.gl/dc44zHxAmffDJNC87" target="_blank" class="btn btn-outline">
+          📍 Ver Ubicación en Google Maps
+        </a>
+        <a id="btn-whatsapp" href="https://wa.me/526622813788?text=Hola,%20confirmo%20mi%20asistencia" target="_blank" class="btn btn-solid">
+          💬 Confirmar Asistencia por WhatsApp
+        </a>
+      </section>
+
+      <footer class="footer">
+        <p>¡TE ESPERAMOS!</p>
+        <small>FAVOR DE CONFIRMAR SU ASISTENCIA</small>
+      </footer>
+
+      <!-- SECCIÓN DE ITINERARIO (LÍNEA DEL TIEMPO AL FINAL) -->
+      <section class="timeline-section">
+        <h3>ITINERARIO</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon">🍸</div>
+            <div class="timeline-content">
+              <h4>7:00 PM</h4>
+              <p>Recepción de Invitados</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">✍️</div>
+            <div class="timeline-content">
+              <h4>8 PM</h4>
+              <p>Ceremonia Civil</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">🥂</div>
+            <div class="timeline-content">
+              <h4>9:30 PM</h4>
+              <p>Brindis y Fotografías</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">🍽️</div>
+            <div class="timeline-content">
+              <h4>10 PM</h4>
+              <p>Cena y Celebración</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Decoración Floral 1 (Esquina inferior izquierda) -->
+    <img src="assets/flores1.png" alt="Decoración Floral 1" class="floral-img bottom-left">
+
+    <!-- Decoración Floral 2 (Esquina inferior derecha) -->
+    <img src="assets/flores2.png" alt="Decoración Floral 2" class="floral-img bottom-right">
+
+  </main>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>

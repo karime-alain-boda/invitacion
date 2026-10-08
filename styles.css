@@ -1,0 +1,356 @@
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --primary-olive: #4A5D4E;    /* Verde oliva del texto */
+    --accent-gold: #C49A45;     /* Dorado para la letra cursiva */
+    --paper-bg: #FAF9F6;        /* Color del papel blanco artesanal */
+    --text-dark: #333333;
+    --font-serif: 'Cinzel', serif;
+    --font-script: 'Alex Brush', cursive;
+    --font-body: 'Montserrat', sans-serif;
+  }
+  
+  /* FONDO GENERAL EXTERNO (Primera capa del fondo t.png) */
+  body {
+    font-family: var(--font-body);
+    background-image: 
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0.08) 100%),
+      url('assets/t.png'),
+      url('assets/t.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    color: var(--primary-olive);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 10px;
+  }
+  
+  /* MARCO CONTENEDOR (Segunda capa de t.png con sombra proyectada sobre el fondo externo) */
+  .main-wrapper {
+    width: 100%;
+    max-width: 520px;
+    background-image: 
+      linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.04) 100%),
+      url('assets/t.png'),
+      url('assets/t.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 35px 20px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+      0 20px 45px rgba(0, 0, 0, 0.28),
+      0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  /* ESTILOS Y POSICIONAMIENTO DE LAS IMÁGENES FLORALES */
+  .floral-img {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    height: auto;
+    mix-blend-mode: multiply;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+  }
+  
+  /* flores3.png (Arriba Izquierda) - Respetando tus coordenadas y rotación */
+  .top-left {
+    top: -50px;
+    left: -70px;
+    width: 200px;
+    transform: rotate(30deg);
+  }
+  
+  /* flores1.png (Abajo Izquierda) - Respetando tus coordenadas y rotación */
+  .bottom-left {
+    bottom: -40px;
+    left: -60px;
+    width: 240px;
+    transform: rotate(0deg);
+  }
+  
+  /* flores2.png (Abajo Derecha) - Respetando tus coordenadas y rotación */
+  .bottom-right {
+    bottom: -80px;
+    right: -100px;
+    width: 250px;
+    transform: rotate(15deg);
+  }
+  
+  /* TARJETA EN RELIEVE INTERNA (CONTAINER DE PAPEL BLANCO) */
+  .card-container {
+    background-color: var(--paper-bg);
+    border-radius: 6px;
+    padding: 45px 25px 40px 25px;
+    text-align: center;
+    box-shadow: 
+      0 15px 35px rgba(0, 0, 0, 0.12), 
+      0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* ENCABEZADOS */
+  .subtitle {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--primary-olive);
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .names {
+    font-family: var(--font-script);
+    font-size: 4rem;
+    color: var(--accent-gold);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 15px 0 25px 0;
+  }
+  
+  .ampersand {
+    font-family: var(--font-script);
+    color: var(--accent-gold);
+  }
+  
+  /* MENSAJE CENTRAL */
+  .message {
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    color: var(--primary-olive);
+    margin: 25px 0;
+  }
+  
+  /* FECHA Y HORA */
+  .event-info {
+    margin: 30px 0;
+  }
+  
+  .date-time {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-olive);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .divider {
+    font-weight: 300;
+    color: var(--accent-gold);
+  }
+  
+  .location {
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+  
+  /* LÍNEA DEL TIEMPO / ITINERARIO */
+  .timeline-section {
+    margin: 35px 0 25px 0;
+    padding-top: 25px;
+    border-top: 1px solid rgba(74, 93, 78, 0.2);
+  }
+  
+  .timeline-section h3 {
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    letter-spacing: 2.5px;
+    color: var(--primary-olive);
+    margin-bottom: 25px;
+  }
+  
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background-color: rgba(74, 93, 78, 0.2);
+    z-index: 1;
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+  }
+  
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid rgba(74, 93, 78, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+  }
+  
+  .timeline-content h4 {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-olive);
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  
+  .timeline-content p {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: #555;
+    font-weight: 400;
+  }
+  
+  /* RELOJ EN TIEMPO REAL */
+  .countdown-section {
+    margin: 35px 0 25px 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(74, 93, 78, 0.2);
+  }
+  
+  .countdown-section h3 {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+  
+  .timer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .time-box {
+    background-color: #ffffff;
+    border: 1px solid rgba(74, 93, 78, 0.2);
+    border-radius: 6px;
+    padding: 10px 12px;
+    min-width: 65px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+  }
+  
+  .time-box span {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-olive);
+    display: block;
+  }
+  
+  .time-box p {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-top: 4px;
+  }
+  
+  /* BOTONES INTERACTIVOS */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px 0;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline {
+    border: 1.5px solid var(--primary-olive);
+    color: var(--primary-olive);
+    background-color: transparent;
+  }
+  
+  .btn-solid {
+    background-color: var(--primary-olive);
+    color: #ffffff;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* FOOTER */
+  .footer p {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .footer small {
+    font-family: var(--font-serif);
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+  
+  /* RESPONSIVO PARA DISPOSITIVOS MÓVILES */
+  @media (max-width: 450px) {
+    .card-container {
+      padding: 35px 18px 30px 18px;
+    }
+    .names {
+      font-size: 3.2rem;
+    }
+    .timer-grid {
+      gap: 8px;
+    }
+    .time-box {
+      min-width: 55px;
+      padding: 8px 6px;
+    }
+    .time-box span {
+      font-size: 1.25rem;
+    }
+  }
